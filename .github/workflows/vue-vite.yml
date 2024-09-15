@@ -71,6 +71,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Copy env
+        run: cp .env.example .env
+
       - name: Static HTML export with Nuxt
         run: pnpm run build
 
