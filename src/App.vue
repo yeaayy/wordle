@@ -125,4 +125,3 @@ header {
   bottom: 1rem;
 }
 </style>
-./wordle/WordleEngine./wordle/WordleHard./wordle/WordleMedium./wordle/WordleSimple
