@@ -21,7 +21,7 @@ const settings = inject<Settings>('settings')!;
 const lang = useI18n();
 let worldlist: WordlistData
 
-function onKeyUp(e: KeyboardEvent) {
+function onKeyDown(e: KeyboardEvent) {
   e.preventDefault();
   let key = e.key.toLowerCase();
   if (key === 'delete') key = 'del';
@@ -67,14 +67,14 @@ function onNewGame(difficulty: string) {
 }
 
 onMounted(async () => {
-  window.addEventListener('keyup', onKeyUp);
+  window.addEventListener('keydown', onKeyDown);
   const response = await fetch(`id.wordlist.json`);
   worldlist = (await response.json()) as WordlistData;
   onNewGame(settings?.difficulty);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('keyup', onKeyUp);
+  window.removeEventListener('keydown', onKeyDown);
 })
 </script>
 
