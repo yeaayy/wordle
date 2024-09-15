@@ -23,6 +23,17 @@ for (const row of layout) {
 }
 
 function setState(key: string, state: ValidationResult) {
+  const rank = {
+    correct: 2,
+    false: 0,
+    contain: 1,
+  };
+  const oldState = validation[key];
+  if (oldState) {
+    if (rank[oldState] > rank[state]) {
+      return;
+    }
+  }
   validation[key] = state;
 }
 
