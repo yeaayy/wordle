@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type Settings } from '@/Settings';
-import { WordleHard, WordleMedium, WordleSimple, type UseI18n, type ValidationResult, type WordleEngine } from '@/wordle';
+import { WordleHard, WordleHarder, WordleMedium, WordleSimple, type UseI18n, type ValidationResult, type WordleEngine } from '@/wordle';
 import { inject, onBeforeUnmount, onMounted, ref, type ComponentInstance } from 'vue';
 import { useI18n } from 'vue-i18n';
 import KeyboardView from './components/KeyboardView.vue';
@@ -55,6 +55,10 @@ function onNewGame(difficulty: string) {
 
     case 'hard':
       engine = new WordleHard(5, lang as UseI18n, worldlist);
+      break;
+
+    case 'harder':
+      engine = new WordleHarder(5, lang as UseI18n, worldlist);
       break;
 
     default:

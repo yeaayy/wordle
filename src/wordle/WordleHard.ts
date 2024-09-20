@@ -3,8 +3,8 @@ import { WordleMedium } from "./WordleMedium";
 
 export class WordleHard extends WordleMedium {
 
-  private used: {[key: string]: boolean} = {};
-  private known: string[] = [];
+  protected used: {[key: string]: boolean} = {};
+  protected known: string[] = [];
 
   precheck(word: string): string | undefined {
       const result = super.precheck(word);

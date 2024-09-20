@@ -21,7 +21,7 @@ export class WordleSimple extends WordleEngine {
       return this.answer;
   }
 
-  private getStat(word: string) {
+  protected getStat(word: string) {
     const count: { [key: string]: number } = {};
     const index: { [key: string]: number[] } = {};
     for (var i = 0; i < word.length; i++) {

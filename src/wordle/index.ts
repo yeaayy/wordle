@@ -2,4 +2,5 @@ export { PrecheckError, ValidationResult, WordleEngine, type UseI18n, type Wordl
 export { WordleSimple } from './WordleSimple';
 export { WordleMedium } from './WordleMedium';
 export { WordleHard } from './WordleHard';
+export { WordleHarder } from './WordleHarder';
 

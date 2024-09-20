@@ -46,13 +46,16 @@ defineExpose({
             <OptionButton name="easy">{{ $t('easy').toUpperCase() }}</OptionButton>
             <OptionButton name="medium">{{ $t('medium').toUpperCase() }}</OptionButton>
             <OptionButton name="hard">{{ $t('hard').toUpperCase() }}</OptionButton>
+            <OptionButton name="harder">{{ $t('harder').toUpperCase() }}</OptionButton>
           </RadioGroup>
           <div id="difficulty-desc">{{ 
             difficulty === 'easy'
               ? $t('easy_desc')
               : difficulty === 'medium'
               ? $t('medium_desc')
-              : $t('hard_desc')
+              : difficulty === 'hard'
+              ? $t('hard_desc')
+              : $t('harder_desc')
           }}</div>
 
         </div>
